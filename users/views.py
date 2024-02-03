@@ -20,7 +20,7 @@ def sign_up(request):
             user = form.save()
             auth_login(request, user)
             messages.success(request, "Signed up successfully.")
-            return redirect('home_page')
+            return redirect('home')
     else:
         form = UserRegisterForm()
 
