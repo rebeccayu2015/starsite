@@ -19,7 +19,7 @@
     <nav>
       {% if user.is_authenticated %}
       <div class="header">
-          <h1><a href="{% url 'home' %}">Constellation Tracker</a></h1>
+          <h1><a href="{% url 'home' %}" style="background: none">Constellation Tracker</a></h1>
           <div>
               Welcome, {{ user.username }}
               <a href="{% url 'profile' %}">Profile</a>
@@ -28,7 +28,7 @@
       </div>
       {% else %}
       <div class="header">
-          <h1><a href="{% url 'home' %}">Constellation Tracker</a></h1>
+          <h1><a href="{% url 'home' %}" style="background: none">Constellation Tracker</a></h1>
           <div>
               <a href="{% url 'sign_up' %}">Sign Up</a>
               <a href="{% url 'login' %}">Login</a>
