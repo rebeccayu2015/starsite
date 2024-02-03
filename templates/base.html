@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
     <style>
+<<<<<<< HEAD
       h1 {
         color: black;
         font-family: "Infinite Beyond", Times, serif;
@@ -14,11 +16,32 @@
         src: url('/Users/isabella/Desktop/InfiniteBeyond-K7jKo.ttf')
       }
       
+=======
+>>>>>>> c3299b1fca7b43502c6d7d7bc79dff19aa9a8cda
     </style>
     {% block title %}
     {% endblock %}
   </head>
   <body>
+    <div id="header">
+    <div class="container">
+      <nav>
+        {% if user.is_authenticated %}
+            Constellation Tracker
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        {% else %}
+            Constellation Tracker
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+            </ul>
+        {% endif %}
+      </nav>
+    </div>
     {% block content %}
     {% endblock %}
   </body>
