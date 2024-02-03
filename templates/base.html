@@ -3,15 +3,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
     <style>
-      h1 {
-        color: yellow
-      }
     </style>
     {% block title %}
     {% endblock %}
   </head>
   <body>
+    <div id="header">
+    <div class="container">
+      <nav>
+        {% if user.is_authenticated %}
+            Constellation Tracker
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        {% else %}
+            Constellation Tracker
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+            </ul>
+        {% endif %}
+      </nav>
+    </div>
     {% block content %}
     {% endblock %}
   </body>
