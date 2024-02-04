@@ -2,22 +2,33 @@
 
 {% block content %}
 <div id="homepage">
-<h1>Home</h1>
+  <h1>Home</h1>
 
-{% for image in images %}
-    <img src="{{ image.image }}" alt="Constellation Name">
-    <div class="info">
-        <p>{{ image.user }}</p>
-        <p>{{ image.time_submitted }}</p>
-        <p>{{ image.notes }}</p>
-    </div>
-{% empty %}
-<p id= "page-subhead">
-  No uploaded constellations images.
-</p>
-{% endfor %}
+  <div id="images-container">
+      {% for image in images %}
+          <div class="image-post">
+              <div class="image-container">
+                  <img src="{{ image.image }}" alt="Constellation Name" class="post-image">
+              </div>
+              <div class="info">
+                  <p class="user">{{ image.user }}</p>
+                  <p class="time">{{ image.time_submitted }}</p>
+                  <p class="notes">{{ image.notes }}</p>
+              </div>
+              <div class="interaction-bar">
+                  <button class="upvote">👍</button>
+                  <button class="downvote">👎</button>
+                  <button class="comment">🗨️</button>
+              </div>
+          </div>
+      {% empty %}
+          <p id="page-subhead">No uploaded constellations images.</p>
+      {% endfor %}
+  </div>
 
-<a id="image-submit-button" href="{% url 'submit' %}" style="text-decoration:none;">+</a>
+  <a id="image-submit-button" href="{% url 'submit' %}">+</a>
 </div>
+
+
 
 {% endblock %}
