@@ -53,11 +53,11 @@ def submit(request):
         try: #if user already present then overwrite
             user_data = ProfileConstellation.objects.get(user_id = user) 
             json_starDict2 = json.loads(user_data.found_dict)
-            user_data.image_src = const_image
+            user_data.image_id = const_image
             user_data.image_name = const_name
             user_data.save()
             user_data = ProfileConstellation.objects.get(user_id = user) 
-            json_starDict2[const_name][1] = str(user_data.image_src)
+            json_starDict2[const_name][1] = str(user_data.image_id)
             json_starDict2[const_name][0] = 1
             user_data.found_dict = json.dumps(json_starDict2)
             user_data.save()
@@ -65,16 +65,16 @@ def submit(request):
         except ObjectDoesNotExist: # if user new then add an entry.
             profConstell = ProfileConstellation(
                 user_id = user,
-                image_src = const_image,
+                image_id = const_image,
                 image_name = const_name,
                 found_dict = json.dumps(json_starDict)
             )
             profConstell.save()
             user_data = ProfileConstellation.objects.get(user_id = user) 
-            user_data.image_src = const_image
+            user_data.image_id = const_image
             user_data.image_name = const_name
             json_starDict2 = json.loads(user_data.found_dict)
-            json_starDict2[const_name][1] = str(user_data.image_src)
+            json_starDict2[const_name][1] = str(user_data.image_id)
             json_starDict2[const_name][0] = 1
             user_data.found_dict = json.dumps(json_starDict2)
             user_data.save()
