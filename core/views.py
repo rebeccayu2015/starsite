@@ -34,6 +34,8 @@ def profile(request):
     except:
         json_starDictProf = starDict2
 
+    print(json_starDictProf)
+
     context = {
         'constellations' : constellations,
         'json_stars' : json_starDictProf
