@@ -2,26 +2,40 @@
 
 {% block content %}
 <div class="container">
-    {% for constellation in constellations %}
-    {% if json_stars.items.constellation.id.0 == 1 %}
+    {% for key, value in found_const.items %}
         <div class="cell">
-            <img src="{{ constellation.image }}" alt="{{ constellation.latin_name_nom_latin }}" style="width: 100%; max-width: 300px;">
+            <img src="{{ value }}" alt="{{ constellation.latin_name_nom_latin }}" style="width: 100%; max-width: 300px;">
             <div class="info">
                 <h3>{{ constellation.latin_name_nom_latin }}</h3>
-                <p>Date/Time Found</p>
+                <p>Date/Time</p>
                 <button onclick="openModal('{{ constellation.iau_code }}')">More Info</button>
             </div>
         </div>
-    {% else %}
-        <div class="cell">
-            <img src="{{ constellation.image }}" alt="{{ constellation.latin_name_nom_latin }}" style="width: 100%; max-width: 300px;">
-            <div class="info">
-                <h3>{{ constellation.latin_name_nom_latin }}</h3>
-                <p>Date/Time Found</p>
-                <button onclick="openModal('{{ constellation.iau_code }}')">More Info</button>
-            </div>
-        </div>
-    {% endif %}
+    {% endfor %}
+    <!-- {% for constellation in constellations %}
+        {% with star_name=constellation.latin_name_nom_latin %}
+            {% if found_const.star_name == 'Scutum' %}
+                <div class="cell">
+                    <img src="{ "media/media"|add:json_stars.items.constellation.id.1 }}" alt="{{ constellation.latin_name_nom_latin }}" style="width: 100%; max-width: 300px;">
+                    <div class="info">
+                        <h3>{{ constellation.latin_name_nom_latin }}</h3>
+                        <p>Date/Time FoundYAY</p>
+                        <button onclick="openModal('{{ constellation.iau_code }}')">Less Info</button>
+                    </div>
+                </div>
+            {% else %}
+                <div class="cell">
+                    <img src="{{ constellation.image }}" alt="{{ constellation.latin_name_nom_latin }}" style="width: 100%; max-width: 300px;">
+                    <div class="info">
+                        <h3>{{found_const.keys.0}}</h3>
+                        <p>Date/Time Found {{found_const.star_name}}</p>
+                        <button onclick="openModal('{{ constellation.iau_code }}')">More Info</button>
+                    </div>
+                </div>
+            {% endif %}
+        
+        {% endwith %} -->
+
     <!-- Enhanced Modal Structure -->
     <div id="constellationModal_{{ constellation.iau_code }}" class="modal">
         <div class="modal-content">
@@ -35,7 +49,7 @@
             <p id="modalInfo">Declination: {{ constellation.dec_declinaison }}</p>
         </div>
     </div>
-    {% endfor %}
+    <!-- {% endfor %} -->
 </div>
 
 <script>

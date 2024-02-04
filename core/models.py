@@ -16,7 +16,7 @@ jsonConstells = json.dumps(starDict2)
 
 class ProfileConstellation(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'curr_prof')
-    image_id = models.ImageField(upload_to="media/images", height_field=None, width_field=None, max_length=100)
+    image_id = models.ImageField(upload_to="media/images/", height_field=None, width_field=None, max_length=100)
     image_name = models.CharField(max_length = 100)
     found_dict = models.CharField(max_length = 10000, default = 'none')
 

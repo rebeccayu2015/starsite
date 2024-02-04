@@ -12,10 +12,11 @@
       {% csrf_token %}
       <div id="form-col-1">
           <h3 id="const" for="const-name">Constellation Name:</h3><br>
-          <select id="const-name" name="const-name" required>
+          <select name="const-name" id="const_name" required>
               <option value="">Select a Constellation</option>
               {% for constellation in constellations %}
-                  <option value="{{ constellation.value }}">{{ constellation.name }}</option>
+                  <option value="{{ constellation.latin_name_nom_latin }}" name = "const-name" id = "const-name">{{ constellation.latin_name_nom_latin }}
+                  </option>
               {% endfor %}
           </select><br>
 
