@@ -38,7 +38,7 @@ def profile(request):
   
     for constellation in constellations:
         if json_starDictProf[constellation['latin_name_nom_latin']][0] == 1:
-            srcName = "media/media/images/"
+            srcName = "media/images/"
             found[constellation['latin_name_nom_latin']] = [srcName + json_starDictProf[constellation['latin_name_nom_latin']][1], constellation['iau_code']]
         else:
             found[constellation['latin_name_nom_latin']] = [constellation['image'], constellation['iau_code']]
