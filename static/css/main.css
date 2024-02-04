@@ -121,8 +121,51 @@ button:hover {
     background: #777;
 }
 
+#const-name {
+    padding: 0px; 
+    margin: 0px;
+    margin-left: 38px;
+    margin-bottom: 15px; 
+    width: 370px; 
+}
+
+#notes {
+    padding: 0px; 
+    margin: 0px;
+    margin-left: 38px;
+    margin-bottom: 15px; 
+    width: 370px; 
+}
+
+
+#const {
+    margin-top: 20px; 
+}
+
+#note {
+    margin-top: 20px;
+    margin-left: 37px; 
+    padding: 0px; 
+}
+
+#special-label {
+    margin-top: 20px;
+    margin-left: 38px; 
+}
+
+#special-input {
+    margin: 0px;
+    margin-left: 3px; 
+    height: 50px; 
+}
+
+#form-submit-button {
+    width: 380px;
+    margin-left: 37px; 
+}
+
 .item-form {
-    width: 350px;
+    width: 450px;
     height: 500px;
     margin: auto;
     margin-top: 70px; 
@@ -203,9 +246,8 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    border: 1px solid white; /* Add this line */
+    border: 1px solid white; 
 }
-
 
 .cell:hover {
     transform: translateY(-5px);
