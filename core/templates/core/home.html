@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="homepage">
 <h1>Home</h1>
 
 {% for image in images %}
     <img src="{{ image.image }}" alt="Constellation Name">
     <div class="info">
-        <h3>{{ image.curr_user }}</h3>
-        <p>Date/Time Found</p>
-        <a href="path_to_more_information">More Info</a>
+        <p>{{ image.user }}</p>
+        <p>{{ image.time_submitted }}</p>
+        <p>{{ image.notes }}</p>
     </div>
 {% empty %}
 <p id= "page-subhead">
   No uploaded constellations images.
 </p>
 {% endfor %}
+
+<a id="image-submit-button" href="{% url 'submit' %}" style="text-decoration:none;">+</a>
+</div>
+
 {% endblock %}

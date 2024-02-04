@@ -13,6 +13,20 @@
     src: url('/static/fonts/pentagra.ttf') format(TrueType);
 }
 
+p {
+    font-family: sans-serif;
+}
+
+#signup {
+    display: inline-block; 
+    margin-top: 11px; 
+    margin-right: 11px; 
+}
+
+#homepage{
+    margin-left: 40px; 
+}
+
 h1 {
     color: white;
     font-family: "Pentagra", Times, serif;
@@ -121,8 +135,51 @@ button:hover {
     background: #777;
 }
 
+#const-name {
+    padding: 0px; 
+    margin: 0px;
+    margin-left: 38px;
+    margin-bottom: 15px; 
+    width: 370px; 
+}
+
+#notes {
+    padding: 0px; 
+    margin: 0px;
+    margin-left: 38px;
+    margin-bottom: 15px; 
+    width: 370px; 
+}
+
+
+#const {
+    margin-top: 20px; 
+}
+
+#note {
+    margin-top: 20px;
+    margin-left: 37px; 
+    padding: 0px; 
+}
+
+#special-label {
+    margin-top: 20px;
+    margin-left: 38px; 
+}
+
+#special-input {
+    margin: 0px;
+    margin-left: 3px; 
+    height: 50px; 
+}
+
+#form-submit-button {
+    width: 380px;
+    margin-left: 37px; 
+}
+
 .item-form {
-    width: 350px;
+    width: 450px;
     height: 500px;
     margin: auto;
     margin-top: 70px; 
@@ -203,9 +260,8 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    border: 1px solid white; /* Add this line */
+    border: 1px solid white; 
 }
-
 
 .cell:hover {
     transform: translateY(-5px);
@@ -256,9 +312,161 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 10;
 }
 
 body {
     padding-top: 70px;
 }
 
+#image-submit-button {
+    border-width: 0px;
+    border-radius: 50%;
+    background-color: #777;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+
+    width: 75px;
+    height: 75px;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    font-size: 60px;
+    font-family: 'Lora';
+    font-weight: 800;
+
+    transition: background .2s ease-in-out;
+}
+
+#image-submit-button:hover {
+    background-color: darkgray;
+}
+
+#form-back-button {
+    border-width: 0px;
+    border-radius: 50%;
+    background-color: #777;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+
+    width: 75px;
+    height: 75px;
+
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+
+    font-size: 60px;
+    font-family: 'Lora';
+    font-weight: 800;
+
+    transition: background .2s ease-in-out;
+
+}
+
+#form-back-button:hover {
+    background-color: darkgray;
+}
+
+/* Enhanced Modal Styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+    animation: fadeIn 0.5s;
+    /* Fading in effect */
+}
+
+.modal-content {
+    position: relative;
+    background-image: url('space-background.jpg');
+    /* Space-themed background */
+    margin: 5% auto;
+    /* Margin from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Adjust based on preference */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Shadow effect for depth */
+    border-radius: 10px;
+    /* Rounded corners */
+    animation: slideIn 0.5s;
+    /* Slide in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: #ccc;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* "More Info" button styles */
+.info button {
+    background-color: #005eff;
+    /* Light blue background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+}
+
+.info button:hover {
+    background-color: #0011ff;
+    /* Darker shade on hover */
+}

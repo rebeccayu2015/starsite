@@ -7,26 +7,35 @@
 {% block content %}
 
 <div class="item-form">
-    <h2>Found a constellation? Log it here!</h2>
+  <h2>Found a constellation? Log it here!</h2>
   <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div id="form-col-1">
-          <h3 for="const-name"> Constellation Name:</h3><br>
-          <input type="text" id ="const-name" name="const-name" placeholder="" required><br>
+      {% csrf_token %}
+      <div id="form-col-1">
+          <h3 id="const" for="const-name">Constellation Name:</h3><br>
+          <select id="const-name" name="const-name" required>
+              <option value="">Select a Constellation</option>
+              {% for constellation in constellations %}
+                  <option value="{{ constellation.value }}">{{ constellation.name }}</option>
+              {% endfor %}
+          </select><br>
 
-          <h3 for="notes">Notes:</h3><br>
+          <h3 id="note" for="notes">Notes:</h3><br>
           <input type="text" id="notes" name="notes" placeholder="" required><br>
 
           <h3 id="special-label">Constellation Image:</h3><br>
 
           <h3 for="image" class="drop-container">
-            <input type="file" accept="image/png, image/jpeg, image/jpg" id="special-input" name="image" required>
+              <input type="file" accept="image/png, image/jpeg, image/jpg" id="special-input" name="image" required>
           </h3>
-        </div>
+      </div>
 
-        <button type="submit" id="form-submit-button"> Submit </button> 
+      <button type="submit" id="form-submit-button">Submit</button> 
   </form>
 </div>
 
-<button title = "Back to gallery!" id="form-back-button"><a id="form-back-button" href="{% url 'home' %}" style="text-decoration:none;">Back</a></button>
+<button id="form-back-button">
+  <a href="{% url 'home' %}" style="text-decoration:none;">←</a>
+</button>
+
+
 {% endblock %}
