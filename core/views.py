@@ -34,8 +34,6 @@ def profile(request):
     except:
         json_starDictProf = starDict2
 
-    print(json_starDictProf)
-
     context = {
         'constellations' : constellations,
         'json_stars' : json_starDictProf
@@ -60,6 +58,7 @@ def submit(request):
         user = User.objects.get(id=request.user.id)
         json_starDict = json.loads(jsonConstells)
         json_starDict[const_name][0] = 1
+        print(const_name)
 
         try: #if user already present then overwrite
             user_data = ProfileConstellation.objects.get(user_id = user) 
@@ -94,5 +93,13 @@ def submit(request):
 
         messages.success(request, "Added image \"" + image.constellation_name + "\".")
         return redirect('home')
+    
+    json_const = open('static/json/constellations.json')
+    constellations = json.load(json_const)
+    json_const.close()
 
-    return render(request, 'core/submit.html')
+    context = {
+        'constellations' : constellations,
+    }
+
+    return render(request, 'core/submit.html', context)

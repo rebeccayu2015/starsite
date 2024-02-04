@@ -15,7 +15,7 @@
           <select id="const-name" name="const-name" required>
               <option value="">Select a Constellation</option>
               {% for constellation in constellations %}
-                  <option value="{{ constellation.value }}">{{ constellation.name }}</option>
+                  <option value="{{ constellation.latin_name_nom_latin }}">{{ constellation.latin_name_nom_latin }}</option>
               {% endfor %}
           </select><br>
 
@@ -38,11 +38,5 @@
     🚀
   </a>
 </button>
-
-
-
-
-
-
 
 {% endblock %}
