@@ -1,14 +1,4 @@
 @font-face {
-    font-family: "Infinite Beyond";
-    src: url('/static/fonts/InfiniteBeyond-K7jKo.ttf') format(TrueType);
-}
-
-@font-face {
-    font-family: "Alien";
-    src: url('/static/fonts/alien.regular.ttf') format(TrueType);
-}
-
-@font-face {
     font-family: "Pentagra";
     src: url('/static/fonts/pentagra.ttf') format(TrueType);
 }
@@ -26,6 +16,24 @@ p {
 #homepage {
     margin-left: 40px;
 }
+
+.image-post {
+    border: 3px solid white;
+    border-radius: 5px; 
+    height: auto; 
+}
+
+.info {
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 12px;
+    margin-top: 4px;
+}
+
 
 h1 {
     color: white;
