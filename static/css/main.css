@@ -187,7 +187,9 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+    border: 1px solid white; /* Add this line */
 }
+
 
 .cell:hover {
     transform: translateY(-5px);
@@ -243,3 +245,4 @@ nav {
 body {
     padding-top: 70px;
 }
+
