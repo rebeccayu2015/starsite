@@ -20,6 +20,7 @@ def home(request):
 
     return render(request, 'core/home.html', context)
 
+@login_required(login_url='/login/')
 def profile(request):
     json_const = open('static/json/constellations.json')
     constellations = json.load(json_const)
@@ -31,6 +32,7 @@ def profile(request):
 
     return render(request, 'core/profile.html', context)
 
+@login_required(login_url='/login/')
 def submit(request):
     if request.method == 'POST':
         const_name = request.POST['const-name']

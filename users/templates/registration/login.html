@@ -16,10 +16,9 @@
   <h2>Log In</h2>
   <h3>Log in to stay updated on your constellations</h3> 
   {% if "next" in request.get_full_path %}
-    <div class="alert alert-warning alert-dismissible" role="alert">
+  <h3><div class="alert alert-warning alert-dismissible" role="alert">
       You must log in to continue.
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
+    </div></h3>
   {% endif %}
   <form class="needs-validation" name="login" action="" method="POST" enctype="multipart/form-data" novalidate>
     {% csrf_token %}
