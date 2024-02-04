@@ -1,5 +1,31 @@
 {% extends "base.html" %}
 
+{% block title %}
+<title>Submit</title>
+{% endblock %}
+
 {% block content %}
-    Submit
+<div class="item-form">
+  <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="form-col-1">
+          <label for="item-name"> Constellation Name:</label><br>
+          <input type="text" id ="item-name" name="item-name" placeholder="What's the constellation?" required><br>
+
+          <label for="location-found">Notes:</label><br>
+          <input type="text" id="location-found" name="location-found" placeholder="Any notes?" required><br>
+
+          <label id="special-label">Constellation Image:</label><br>
+
+          <label for="item-image" class="drop-container">
+            <input type="file" accept="image/png, image/jpeg, image/jpg" id="special-input" name="item-image" required>
+          </label>
+        </div>
+
+        <button type="submit" id="form-submit-button"> Submit </button> 
+
+  </form>
+</div>
+
+<button title = "Back to gallery!" id="form-back-button"><a id="form-back-button" href="{% url 'home' %}" style="text-decoration:none;">Back</a></button>
 {% endblock %}
