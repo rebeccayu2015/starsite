@@ -15,14 +15,22 @@
                   <p class="time">{{ image.time_submitted }}</p>
                   <p class="notes">{{ image.notes }}</p>
               </div>
+              {% if user.is_authenticated %}
+              <div class="interaction-bar">
+                  <button class="upvote">⬆</button>
+                  {% comment %} <button class="downvote">👎</button>
+                  <button class="comment">🗨️</button> {% endcomment %}
+              </div>
+              {% endif %}
           </div>
       {% empty %}
           <p id="page-subhead">No uploaded constellations images.</p>
       {% endfor %}
   </div>
 
-  <a id="image-submit-button" style="text-decoration: none" href="{% url 'submit' %}">+</a>
+  <a id="image-submit-button" href="{% url 'submit' %}">+</a>
 </div>
+
 
 
 
