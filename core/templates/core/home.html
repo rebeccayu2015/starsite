@@ -4,11 +4,11 @@
 <div id="homepage">
   <h1>Home</h1>
 
-  <div id="images-container">
+  <div class="container" id="images-container">
       {% for image in images %}
           <div class="image-post">
               <div class="image-container">
-                  <img src="/media/{{ image.image }}" alt="Constellation Name" class="post-image">
+                  <img style="width: 100%; max-width: 300px;" src="{{ image.image }}" alt="Constellation Name" class="post-image">
               </div>
               <div class="info">
                   <p class="user">{{ image.user }}</p>
@@ -28,8 +28,9 @@
       {% endfor %}
   </div>
 
-  <a id="image-submit-button" style="text-decoration: none" href="{% url 'submit' %}">+</a>
+  <a id="image-submit-button" href="{% url 'submit' %}">+</a>
 </div>
+
 
 
 
