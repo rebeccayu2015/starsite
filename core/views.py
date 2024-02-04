@@ -25,9 +25,20 @@ def profile(request):
     json_const = open('static/json/constellations.json')
     constellations = json.load(json_const)
     json_const.close()
-    
+    json_starDictProf = {}
+
+    found = {}
+    try:
+        user_data = ProfileConstellation.objects.get(user_id = request.user) 
+        json_starDictProf = json.load(user_data.found_dict)
+    except:
+        json_starDictProf = starDict2
+
+    print(json_starDictProf)
+
     context = {
-        'constellations' : constellations
+        'constellations' : constellations,
+        'json_stars' : json_starDictProf
     }
 
     return render(request, 'core/profile.html', context)
@@ -53,11 +64,11 @@ def submit(request):
         try: #if user already present then overwrite
             user_data = ProfileConstellation.objects.get(user_id = user) 
             json_starDict2 = json.loads(user_data.found_dict)
-            user_data.image_src = const_image
+            user_data.image_id = const_image
             user_data.image_name = const_name
             user_data.save()
             user_data = ProfileConstellation.objects.get(user_id = user) 
-            json_starDict2[const_name][1] = str(user_data.image_src)
+            json_starDict2[const_name][1] = str(user_data.image_id)
             json_starDict2[const_name][0] = 1
             user_data.found_dict = json.dumps(json_starDict2)
             user_data.save()
@@ -65,16 +76,16 @@ def submit(request):
         except ObjectDoesNotExist: # if user new then add an entry.
             profConstell = ProfileConstellation(
                 user_id = user,
-                image_src = const_image,
+                image_id = const_image,
                 image_name = const_name,
                 found_dict = json.dumps(json_starDict)
             )
             profConstell.save()
             user_data = ProfileConstellation.objects.get(user_id = user) 
-            user_data.image_src = const_image
+            user_data.image_id = const_image
             user_data.image_name = const_name
             json_starDict2 = json.loads(user_data.found_dict)
-            json_starDict2[const_name][1] = str(user_data.image_src)
+            json_starDict2[const_name][1] = str(user_data.image_id)
             json_starDict2[const_name][0] = 1
             user_data.found_dict = json.dumps(json_starDict2)
             user_data.save()

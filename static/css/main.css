@@ -18,14 +18,13 @@ p {
 }
 
 #signup {
-    display: inline-block; 
-    margin-top: 11px; 
-    margin-right: 11px; 
-    margin-left: 11px;
+    display: inline-block;
+    margin-top: 11px;
+    margin-right: 11px;
 }
 
-#homepage{
-    margin-left: 40px; 
+#homepage {
+    margin-left: 40px;
 }
 
 h1 {
@@ -41,7 +40,7 @@ h2 {
     margin: 0px;
     margin-left: 34px;
     margin-top: 30px;
-    line-height: 35px; 
+    line-height: 35px;
 }
 
 h3 {
@@ -75,9 +74,9 @@ button {
 }
 
 .invalid-feedback {
-    padding: 0px; 
+    padding: 0px;
     margin: 0px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -106,7 +105,7 @@ button:hover {
 
 .mb-3 {
     padding-bottom: 15px;
-    margin-top: 0px; 
+    margin-top: 0px;
 }
 
 #togglePassword {
@@ -115,7 +114,7 @@ button:hover {
 
 .header {
     background-image: url("/static/Milky_Way_panorama_-_4_Aug._2008-2.png");
-    background-size: cover; 
+    background-size: cover;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -137,53 +136,53 @@ button:hover {
 }
 
 #const-name {
-    padding: 0px; 
+    padding: 0px;
     margin: 0px;
     margin-left: 38px;
-    margin-bottom: 15px; 
-    width: 370px; 
+    margin-bottom: 15px;
+    width: 370px;
 }
 
 #notes {
-    padding: 0px; 
+    padding: 0px;
     margin: 0px;
     margin-left: 38px;
-    margin-bottom: 15px; 
-    width: 370px; 
+    margin-bottom: 15px;
+    width: 370px;
 }
 
 
 #const {
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 #note {
     margin-top: 20px;
-    margin-left: 37px; 
-    padding: 0px; 
+    margin-left: 37px;
+    padding: 0px;
 }
 
 #special-label {
     margin-top: 20px;
-    margin-left: 38px; 
+    margin-left: 38px;
 }
 
 #special-input {
     margin: 0px;
-    margin-left: 3px; 
-    height: 50px; 
+    margin-left: 3px;
+    height: 50px;
 }
 
 #form-submit-button {
     width: 380px;
-    margin-left: 37px; 
+    margin-left: 37px;
 }
 
 .item-form {
     width: 450px;
     height: 500px;
     margin: auto;
-    margin-top: 70px; 
+    margin-top: 70px;
     border: solid white 1px;
     border-radius: 20px;
     font-family: sans-serif;
@@ -197,17 +196,17 @@ button:hover {
 }
 
 .signup-container {
-    width: 800px; 
-    height: auto; 
+    width: 800px;
+    height: auto;
     margin: auto;
-    margin-top: 40px; 
+    margin-top: 40px;
     border: solid white 1px;
     border-radius: 20px;
     font-family: sans-serif;
 }
 
 #create {
-    font-family : Pentagra;
+    font-family: Pentagra;
 }
 
 #id_username_helptext {
@@ -216,7 +215,7 @@ button:hover {
 }
 
 #id_last_name {
-    margin-left: 3.5px; 
+    margin-left: 3.5px;
 }
 
 #id_username {
@@ -224,20 +223,20 @@ button:hover {
 }
 
 .form-text {
-    font-size: 14px; 
+    font-size: 14px;
     font-style: italic;
-    margin-top: 5px; 
+    margin-top: 5px;
 }
 
 li {
-    padding: 2px; 
+    padding: 2px;
 }
 
 .login-container {
     width: 350px;
     height: 500px;
     margin: auto;
-    margin-top: 70px; 
+    margin-top: 70px;
     border: solid white 1px;
     border-radius: 20px;
     font-family: sans-serif;
@@ -261,7 +260,7 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    border: 1px solid white; 
+    border: 1px solid white;
 }
 
 .cell:hover {
@@ -379,7 +378,7 @@ body {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 20;
     /* Sit on top */
     left: 0;
     top: 0;
@@ -411,6 +410,10 @@ body {
     /* Rounded corners */
     animation: slideIn 0.5s;
     /* Slide in effect */
+}
+
+#modalInfo {
+    text-align: center;
 }
 
 @keyframes fadeIn {
