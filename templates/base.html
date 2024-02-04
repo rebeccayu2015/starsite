@@ -38,5 +38,26 @@
     </nav>
     {% block content %}
     {% endblock %}
+    <script>
+      document.addEventListener('mousemove', function(e) {
+          const numberOfStars = 20; // Increase for higher density
+          for (let i = 0; i < numberOfStars; i++) {
+              const star = document.createElement('div');
+              star.style.position = 'absolute';
+              star.style.width = '.7px'; // Thinner particles
+              star.style.height = '1px';
+              const hue = Math.random() * 45; // Hue range for yellow to red
+              star.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+              star.style.boxShadow = `0 0 2px hsl(${hue}, 100%, 50%)`; // Subtle glow
+              star.style.borderRadius = '50%';
+              star.style.left = `${e.pageX + (Math.random() - 0.5) * 15}px`; // Tighter clustering
+              star.style.top = `${e.pageY + (Math.random() - 0.5) * 15}px`;
+              document.body.appendChild(star);
+              setTimeout(() => {
+                  document.body.removeChild(star);
+              }, 250); // Shorter lifespan for less trail persistence
+          }
+      });
+  </script>
   </body>
 </html>
