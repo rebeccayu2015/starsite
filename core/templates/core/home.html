@@ -8,20 +8,13 @@
       {% for image in images %}
           <div class="image-post">
               <div class="image-container">
-                  <img style="width: 100%; max-width: 300px;" src="{{ image.image }}" alt="Constellation Name" class="post-image">
+                  <img style="width: 100%; max-width: 400px;" src="{{ image.image }}" alt="Constellation Name" class="post-image">
               </div>
               <div class="info">
                   <p class="user">{{ image.user }}</p>
                   <p class="time">{{ image.time_submitted }}</p>
                   <p class="notes">{{ image.notes }}</p>
               </div>
-              {% if user.is_authenticated %}
-              <div class="interaction-bar">
-                  <button class="upvote">⬆</button>
-                  {% comment %} <button class="downvote">👎</button>
-                  <button class="comment">🗨️</button> {% endcomment %}
-              </div>
-              {% endif %}
           </div>
       {% empty %}
           <p id="page-subhead">No uploaded constellations images.</p>

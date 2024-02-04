@@ -160,7 +160,6 @@ button:hover {
     width: 370px; 
 }
 
-
 #const {
     margin-top: 20px; 
 }
@@ -481,7 +480,7 @@ body {
 }
 
 #homepage {
-    font-family: 'Arial', sans-serif;
+    font-family: sans-serif;
     color: #FFFFFF;
     background-color: #1E1E1E;
     max-width: 800px;
@@ -490,36 +489,37 @@ body {
 }
 
 h1 {
-    color: #7a90ff; /* Warm shade of blue */
+    color: white; 
     text-align: center;
 }
 
 #images-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
 }
 
 .image-post {
     background-color: #292929;
-    border: 2px solid #7a83ff; 
+    border: 2px solid white; 
     border-radius: 10px;
-    overflow: hidden;
+    height: auto; 
+    width: auto;
+    overflow: scroll;
 }
 
 .image-container {
-    width: 100%;
+    width: auto; 
     overflow: hidden; /* Ensures the image fits within the container */
 }
 
 .post-image {
-    width: 100%;
+    width: auto; 
     height: auto; /* Scales the height to maintain aspect ratio */
-    object-fit: contain; /* Ensures the whole image is visible */
+    
 }
 
 .info {
     padding: 10px;
+    color: white; 
 }
 
 .user, .time {
