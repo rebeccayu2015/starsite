@@ -30,15 +30,18 @@ def profile(request):
 
 
     found = {}
-    user_data = ProfileConstellation.objects.get(user_id = user)
-    json_starDictProf = json.loads(user_data.found_dict)
+    try:
+        user_data = ProfileConstellation.objects.get(user_id = user) 
+        json_starDictProf = json.loads(user_data.found_dict)
+    except ObjectDoesNotExist:
+        json_starDictProf = starDict2
   
     for constellation in constellations:
         if json_starDictProf[constellation['latin_name_nom_latin']][0] == 1:
             srcName = "media/media/images/"
-            found[constellation['latin_name_nom_latin']] = srcName + json_starDictProf[constellation['latin_name_nom_latin']][1]
+            found[constellation['latin_name_nom_latin']] = [srcName + json_starDictProf[constellation['latin_name_nom_latin']][1], constellation['iau_code']]
         else:
-            found[constellation['latin_name_nom_latin']] = constellation['image']
+            found[constellation['latin_name_nom_latin']] = [constellation['image'], constellation['iau_code']]
 
 
     print(found)
