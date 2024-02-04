@@ -18,7 +18,7 @@ def home(request):
     return render(request, 'core/home.html', context)
 
 def profile(request):
-    json_const = open('users/static/json/constellations.json')
+    json_const = open('static/json/constellations.json')
     constellations = json.load(json_const)
     json_const.close()
     
