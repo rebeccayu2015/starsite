@@ -11,10 +11,10 @@
   <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="form-col-1">
-          <h3 for="const-name"> Constellation Name:</h3><br>
+          <h3 id="const" for="const-name"> Constellation Name:</h3><br>
           <input type="text" id ="const-name" name="const-name" placeholder="" required><br>
 
-          <h3 for="notes">Notes:</h3><br>
+          <h3 id="note" for="notes">Notes:</h3><br>
           <input type="text" id="notes" name="notes" placeholder="" required><br>
 
           <h3 id="special-label">Constellation Image:</h3><br>
