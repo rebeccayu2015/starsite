@@ -12,6 +12,7 @@
 
 {% block content %}
 <div class="signup-container">
+  <h2 id="create">Create an account to start tracking your constellations!</h2>
   <form class="needs-validation" name="login" action="" method="POST" enctype="multipart/form-data" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
