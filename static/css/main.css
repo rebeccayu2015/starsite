@@ -121,13 +121,22 @@ button:hover {
     background: #777;
 }
 
-input {
+#const-name {
     padding: 0px; 
     margin: 0px;
     margin-left: 38px;
     margin-bottom: 15px; 
     width: 370px; 
 }
+
+#notes {
+    padding: 0px; 
+    margin: 0px;
+    margin-left: 38px;
+    margin-bottom: 15px; 
+    width: 370px; 
+}
+
 
 #const {
     margin-top: 20px; 
