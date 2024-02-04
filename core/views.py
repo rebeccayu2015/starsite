@@ -25,15 +25,18 @@ def profile(request):
     json_const = open('static/json/constellations.json')
     constellations = json.load(json_const)
     json_const.close()
+    json_starDictProf = {}
 
     found = {}
-
-    user_data = ProfileConstellation.objects.get(user_id = request.user) 
-    json_starDict2 = json.loads(user_data.found_dict)
+    try:
+        user_data = ProfileConstellation.objects.get(user_id = request.user) 
+        json_starDictProf = json.load(user_data.found_dict)
+    except:
+        json_starDictProf = starDict2
 
     context = {
         'constellations' : constellations,
-        'json_stars' : json_starDict2
+        'json_stars' : json_starDictProf
     }
 
     return render(request, 'core/profile.html', context)

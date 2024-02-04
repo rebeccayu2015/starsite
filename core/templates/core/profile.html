@@ -5,7 +5,11 @@
     <!-- Constellation blocks -->
     {% for constellation in constellations %}
         <div class="cell">
+            {% if json_stars.items[constellation.id][0] == 1 %}
+            <img src="{{ f'media/media/images{{json_stars[constellation.latin_name_nom_latin][1]}}' }}" alt="Constellation Name">
+            {% else %}
             <img src="{{ constellation.image }}" alt="Constellation Name">
+            {% endif %}
             <div class="info">
                 <h3>{{ constellation.latin_name_nom_latin }}</h3>
                 <p>Date/Time Found</p>
