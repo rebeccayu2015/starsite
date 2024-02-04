@@ -26,20 +26,33 @@ def profile(request):
     constellations = json.load(json_const)
     json_const.close()
     json_starDictProf = {}
+    user = User.objects.get(id=request.user.id)
+
 
     found = {}
-    try:
-        user_data = ProfileConstellation.objects.get(user_id = request.user) 
-        json_starDictProf = json.load(user_data.found_dict)
-    except:
-        json_starDictProf = starDict2
+    user_data = ProfileConstellation.objects.get(user_id = user)
+    json_starDictProf = json.loads(user_data.found_dict)
+  
+    for constellation in constellations:
+        if json_starDictProf[constellation['latin_name_nom_latin']][0] == 1:
+            srcName = "media/media/images/"
+            found[constellation['latin_name_nom_latin']] = srcName + json_starDictProf[constellation['latin_name_nom_latin']][1]
+        else:
+            found[constellation['latin_name_nom_latin']] = constellation['image']
+
+
+    print(found)
+
 
     context = {
         'constellations' : constellations,
-        'json_stars' : json_starDictProf
+        'json_stars' : json_starDictProf,
+        'found_const' : found
     }
-
+    #print(json_starDictProf)
+    #print(json_starDictProf.items())
     return render(request, 'core/profile.html', context)
+
 
 @login_required(login_url='/login/')
 def submit(request):

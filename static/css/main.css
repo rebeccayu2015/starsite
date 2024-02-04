@@ -382,6 +382,8 @@ body {
 
 /* Enhanced Modal Styles */
 .modal {
+    z-index: 20;
+
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -403,6 +405,8 @@ body {
 }
 
 .modal-content {
+    z-index: 20;
+    
     position: relative;
     background-image: url('space-background.jpg');
     /* Space-themed background */
