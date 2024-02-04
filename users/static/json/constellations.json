@@ -15,22 +15,7 @@
     "constellation_zone_milky_way_zone_de_la_constellation_voie_lactee": "Milky Way Equator",
     "quad_repere_de_l_hemisphere_et_du_quadrant": "South Hemisphere Quadrant 4",
     "name_origin_origine_de_l_apellation": "Hevelius",
-    "image": {
-      "thumbnail": true,
-      "filename": "sct.jpg",
-      "format": "JPEG",
-      "width": 320,
-      "mimetype": "image/jpeg",
-      "etag": "\"54b64697-6ce3\"",
-      "id": "f996781593f1b398d00d8209f6740fca",
-      "last_synchronized": "2018-09-20T16:02:36.260845",
-      "color_summary": [
-        "rgba(223, 223, 223, 1.00)",
-        "rgba(219, 219, 218, 1.00)",
-        "rgba(223, 223, 223, 1.00)"
-      ],
-      "height": 320
-    }
+    "image": "/media/images/image1.jpeg"
   },
   {
     "season_saison": "Southern hemisphere constellation / Constellation de l'hémisphère sud",
@@ -48,22 +33,7 @@
     "constellation_zone_milky_way_zone_de_la_constellation_voie_lactee": null,
     "quad_repere_de_l_hemisphere_et_du_quadrant": "South Hemisphere Quadrant 2",
     "name_origin_origine_de_l_apellation": "Bayer",
-    "image": {
-      "thumbnail": true,
-      "filename": "vol.jpg",
-      "format": "JPEG",
-      "width": 320,
-      "mimetype": "image/jpeg",
-      "etag": "\"54b647ec-7ebb\"",
-      "id": "67827a58943028476609e12f7be801a2",
-      "last_synchronized": "2018-09-20T16:02:47.554291",
-      "color_summary": [
-        "rgba(221, 221, 220, 1.00)",
-        "rgba(216, 217, 216, 1.00)",
-        "rgba(225, 224, 224, 1.00)"
-      ],
-      "height": 320
-    }
+    "image": "/media/images/image2.jpeg"
   },
   {
     "season_saison": "Southern hemisphere constellation / Constellation de l'hémisphère sud",

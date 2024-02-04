@@ -3,14 +3,16 @@
 {% block content %}
     <div class="container">
         <!-- Repeat this block for each constellation -->
-        <div class="cell">
-            <img src="https://www.star-registration.com/cdn/shop/files/51_Orion.jpg?v=1681715373&width=1000" alt="Constellation Name">
-            <div class="info">
-                <h3>Constellation Name</h3>
-                <p>Date/Time Found</p>
-                <a href="path_to_more_information">More Info</a>
+        {% for constellation in constellations %}
+            <div class="cell">
+                <img src="{{ constellation.image }}" alt="Constellation Name">
+                <div class="info">
+                    <h3>{{ constellation.latin_name_nom_latin }}</h3>
+                    <p>Date/Time Found</p>
+                    <a href="path_to_more_information">More Info</a>
+                </div>
             </div>
-        </div>
+        {% endfor %}
         <!-- End of constellation block -->
     </div>
 
