@@ -5,21 +5,23 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="item-form">
+    <h2>Found a constellation? Log it here!</h2>
   <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="form-col-1">
-          <label for="const-name"> Constellation Name:</label><br>
+          <h3 for="const-name"> Constellation Name:</h3><br>
           <input type="text" id ="const-name" name="const-name" placeholder="" required><br>
 
-          <label for="notes">Notes:</label><br>
+          <h3 for="notes">Notes:</h3><br>
           <input type="text" id="notes" name="notes" placeholder="" required><br>
 
-          <label id="special-label">Constellation Image:</label><br>
+          <h3 id="special-label">Constellation Image:</h3><br>
 
-          <label for="image" class="drop-container">
+          <h3 for="image" class="drop-container">
             <input type="file" accept="image/png, image/jpeg, image/jpg" id="special-input" name="image" required>
-          </label>
+          </h3>
         </div>
 
         <button type="submit" id="form-submit-button"> Submit </button> 

@@ -20,7 +20,7 @@ h1 {
 
 h2 {
     color: white;
-    font-family: sans-serif;
+    font-family: "Pentagra";
     font-size: 30px;
     padding: 0px;
     margin: 0px;
@@ -60,7 +60,6 @@ button {
 }
 
 .invalid-feedback {
-
     padding: 0px; 
     margin: 0px;
     margin-bottom: 5px; 
@@ -101,6 +100,7 @@ button:hover {
 
 .header {
     background-image: url("/static/Milky_Way_panorama_-_4_Aug._2008-2.png");
+    background-size: cover; 
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -121,6 +121,16 @@ button:hover {
     background: #777;
 }
 
+.item-form {
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    margin-top: 70px; 
+    border: solid white 1px;
+    border-radius: 20px;
+    font-family: sans-serif;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -132,6 +142,7 @@ button:hover {
     width: 800px; 
     height: auto; 
     margin: auto;
+    margin-top: 40px; 
     border: solid white 1px;
     border-radius: 20px;
     font-family: sans-serif;
@@ -168,9 +179,14 @@ li {
     width: 350px;
     height: 500px;
     margin: auto;
+    margin-top: 70px; 
     border: solid white 1px;
     border-radius: 20px;
     font-family: sans-serif;
+}
+
+#back {
+    background-image: url('/static/jake-weirick-Q_RBVFFXR_g-unsplash.jpg');
 }
 
 .needs-validation {
