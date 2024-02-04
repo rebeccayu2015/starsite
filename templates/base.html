@@ -18,12 +18,12 @@
   <body>
     <nav>
       {% if user.is_authenticated %}
-      <div class="header">
+      <div id="newheader" class="header">
           <h1><a href="{% url 'home' %}" style="background: none">Constellation Tracker</a></h1>
           <div>
               Welcome, {{ user.username }}
-              <a href="{% url 'profile' %}">Profile</a>
-              <a href="{% url 'logout' %}">Logout</a>
+              <a id="signup" href="{% url 'profile' %}">Profile</a>
+              <a id="login" href="{% url 'logout' %}">Logout</a>
           </div>
       </div>
       {% else %}
